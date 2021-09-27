@@ -1,6 +1,7 @@
 
 
 ko.applyBindings(Horarios, document.getElementById('ListaHorarios'));
+ko.applyBindings(CursosDisponibles, document.getElementById('ListaCursos'));
 ko.applyBindings(DiasSemana, document.getElementById('selector'));
 
 
@@ -25,6 +26,10 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
     if(vCurso != 'F'){
         valorCurso = vCurso;
         nombreCurso = nCurso;
+
+        cambiarBordesMultiple();
+        cambiarBordeUnico(valorCurso);
+
     }
 
     if (valorDia == '0' & valorCurso == '0') {
@@ -34,6 +39,9 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
 
         cambiarDisplayMultiple(coleccionClases, 'block');
 
+        var coleccionCursosDisponibles = document.getElementsByClassName('cursoDisponible');
+
+        cambiarGrisesMultiple(coleccionCursosDisponibles,0);
     }
     else if (valorDia == '0' & valorCurso != '0') {
 
@@ -45,15 +53,30 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
 
         cambiarDisplayMultiple(coleccionClases, 'block');
 
+        var coleccionCursosDisponibles = document.getElementsByClassName('cursoDisponible');
+
+        cambiarGrisesMultiple(coleccionCursosDisponibles,0);
+
     } else if (valorDia != '0' & valorCurso == '0') {
 
+        //Mostrar Unicamente las Clases del Dia Seleccionado
         var coleccionClases = document.getElementsByClassName('clase');
 
         cambiarDisplayMultiple(coleccionClases, 'none');
 
         var coleccionClases = document.getElementsByClassName(nombreDia);
 
-        cambiarDisplayMultiple(coleccionClases, 'block');
+        cambiarDisplayMultiple(coleccionClases, 'block');    
+
+        //Cambiar Estilos de las Imagenes de los Cursos Disponibles
+
+        var coleccionCursosDisponibles = document.getElementsByClassName('cursoDisponible');
+
+        cambiarGrisesMultiple(coleccionCursosDisponibles,1);
+
+        var coleccionCursosDisponibles = document.getElementsByClassName(nombreDia);
+
+        cambiarGrisesMultiple(coleccionCursosDisponibles,0);
 
     } else {
 
@@ -64,6 +87,15 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
         var coleccionClases = document.getElementsByClassName(nombreDia + ' ' + nombreCurso);
 
         cambiarDisplayMultiple(coleccionClases, 'block');
+
+       
+        var coleccionCursosDisponibles = document.getElementsByClassName('cursoDisponible');
+
+        cambiarGrisesMultiple(coleccionCursosDisponibles,1);
+
+        var coleccionCursosDisponibles = document.getElementsByClassName(nombreDia);
+
+        cambiarGrisesMultiple(coleccionCursosDisponibles,0); 
 
     }
 
@@ -82,3 +114,27 @@ function asignarClass(id,value){
 	document.getElementById(id).className = value;
 
 }
+
+function cambiarBordeUnico(id){
+
+	document.getElementById(id).style.borderColor = '#0366d6';
+
+}
+function cambiarBordesMultiple() {
+
+    var coleccion = document.getElementsByClassName('cursoDisponible');
+
+    for (var i = 0; i < coleccion.length; i++) {
+
+        coleccion[i].style.borderColor= 'rgba(0,0,0,.125)';
+    }
+}
+
+function cambiarGrisesMultiple(coleccion, value) {
+
+    for (var i = 0; i < coleccion.length; i++) {
+
+        coleccion[i].style.filter= 'grayscale('+value+')';
+    }
+}
+

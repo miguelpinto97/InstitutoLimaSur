@@ -29,7 +29,143 @@ var DiasSemana = [
    }
 ];
 
-
+var CursosDisponibles = [
+   {
+      "Curso":"Todos los cursos",
+      "CursoCorto":"0",
+      "Dias":"Lunes Martes Miercoles Jueves Viernes Sabado"
+   },
+   {
+      "Curso":"Antiguo Testamento 1A",
+      "CursoCorto":"AntiguoTestamento1A",
+      "Dias":"Martes"
+   },
+   {
+      "Curso":"Coro Avanzado A",
+      "CursoCorto":"CoroAvanzadoA",
+      "Dias":"Miercoles Jueves"
+   },
+   {
+      "Curso":"Doctrina y Convenios 2 B",
+      "CursoCorto":"DoctrinayConvenios2B",
+      "Dias":"Martes"
+   },
+   {
+      "Curso":"Edifiquemos un Matrimonio Eterno A",
+      "CursoCorto":"EdifiquemosunMatrimonioEternoA",
+      "Dias":"Martes Miercoles"
+   },
+   {
+      "Curso":"El Divino Don de Perdon Parte A",
+      "CursoCorto":"ElDivinoDondePerdonParteA",
+      "Dias":"Lunes Miercoles"
+   },
+   {
+      "Curso":"El Divino Don del Perdon parte B",
+      "CursoCorto":"ElDivinoDondelPerdonparteB",
+      "Dias":"Sabado"
+   },
+   {
+      "Curso":"El Evangelio y la Vida Productiva A",
+      "CursoCorto":"ElEvangelioylaVidaProductivaA",
+      "Dias":"Miercoles"
+   },
+   {
+      "Curso":"Enseñanza y Doctrina del Libro de Mormon A",
+      "CursoCorto":"EnseñanzayDoctrinadelLibrodeMormonA",
+      "Dias":"Viernes Sabado"
+   },
+   {
+      "Curso":"Enseñanzas de los profetas vivientes A",
+      "CursoCorto":"EnseñanzasdelosprofetasvivientesA",
+      "Dias":"Martes"
+   },
+   {
+      "Curso":"Enseñanzas del presidente Nelson",
+      "CursoCorto":"EnseñanzasdelpresidenteNelson",
+      "Dias":"Sabado"
+   },
+   {
+      "Curso":"Enseñanzas del presidente Nelson A",
+      "CursoCorto":"EnseñanzasdelpresidenteNelsonA",
+      "Dias":"Jueves"
+   },
+   {
+      "Curso":"Familia Eterna A",
+      "CursoCorto":"FamiliaEternaA",
+      "Dias":"Jueves"
+   },
+   {
+      "Curso":"Fundamentos de la Restauracion A",
+      "CursoCorto":"FundamentosdelaRestauracionA",
+      "Dias":"Martes Miercoles"
+   },
+   {
+      "Curso":"Introduccion a la Historia Familiar A",
+      "CursoCorto":"IntroduccionalaHistoriaFamiliarA",
+      "Dias":"Martes"
+   },
+   {
+      "Curso":"Jesucristo y el Evangelio Sempiterno",
+      "CursoCorto":"JesucristoyelEvangelioSempiterno",
+      "Dias":"Sabado"
+   },
+   {
+      "Curso":"Jesucristo y el Evangelio Sempiterno A",
+      "CursoCorto":"JesucristoyelEvangelioSempiternoA",
+      "Dias":"Viernes Sabado"
+   },
+   {
+      "Curso":"La Familia Eterna A",
+      "CursoCorto":"LaFamiliaEternaA",
+      "Dias":"Viernes Sabado"
+   },
+   {
+      "Curso":"Las Mujeres de las escrituras A",
+      "CursoCorto":"LasMujeresdelasescriturasA",
+      "Dias":"Martes"
+   },
+   {
+      "Curso":"Las Parabolas de Jesus A",
+      "CursoCorto":"LasParabolasdeJesusA",
+      "Dias":"Viernes"
+   },
+   {
+      "Curso":"Libro de Mormon 1A",
+      "CursoCorto":"LibrodeMormon1A",
+      "Dias":"Miercoles Sabado"
+   },
+   {
+      "Curso":"Mujeres de las escrituras A",
+      "CursoCorto":"MujeresdelasescriturasA",
+      "Dias":"Martes Miercoles"
+   },
+   {
+      "Curso":"Nuevo Testamento 1A",
+      "CursoCorto":"NuevoTestamento1A",
+      "Dias":"Jueves Sabado"
+   },
+   {
+      "Curso":"Parabolas de Jesus A",
+      "CursoCorto":"ParabolasdeJesusA",
+      "Dias":"Sabado"
+   },
+   {
+      "Curso":"Parabolas de Jesus B",
+      "CursoCorto":"ParabolasdeJesusB",
+      "Dias":"Martes"
+   },
+   {
+      "Curso":"Preparacion Misional (por temas)",
+      "CursoCorto":"PreparacionMisional(portemas)",
+      "Dias":"Sabado"
+   },
+   {
+      "Curso":"Preparemonos para un matrimonio Eterno A",
+      "CursoCorto":"PreparemonosparaunmatrimonioEternoA",
+      "Dias":"Martes Sabado"
+   }
+];
 
 
 var Horarios = [
