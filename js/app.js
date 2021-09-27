@@ -33,40 +33,49 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
     }
 
     if (valorDia == '0' & valorCurso == '0') {
+        cambiarDisplayMultiple('#ListaCursos','none');
+ 
+        cambiarDisplayMultiple('#ListaCursos','block'); 
+        
+        cambiarDisplayMultiple('.clase', 'block');
 
-        cambiarDisplayMultiple('clase', 'block');
-
-        cambiarDisplayMultiple('cursoDisponible','block');
+        cambiarDisplayMultiple2('.cursoDisponible','block');
     }
     else if (valorDia == '0' & valorCurso != '0') {
 
-        cambiarDisplayMultiple('clase', 'none');
+        cambiarDisplayMultiple('.clase', 'none');
 
-        cambiarDisplayMultiple(nombreCurso, 'block');
+        cambiarDisplayMultiple('.'+nombreCurso, 'block');
 
-        cambiarDisplayMultiple('cursoDisponible','block');
+        cambiarDisplayMultiple2('.cursoDisponible','block');
 
     } else if (valorDia != '0' & valorCurso == '0') {
 
-        cambiarDisplayMultiple('cursoDisponible','none');
+        cambiarDisplayMultiple('#ListaCursos','none');
+ 
+        cambiarDisplayMultiple('#ListaCursos','block'); 
+    
+        cambiarDisplayMultiple2('.cursoDisponible','none');
 
-        cambiarDisplayMultiple('clase', 'none');
+        cambiarDisplayMultiple2('.cursoDisponible'+'.'+nombreDia,'block');
 
-        cambiarDisplayMultiple(nombreDia,'block');
+        cambiarDisplayMultiple('.clase', 'none');
+
+        cambiarDisplayMultiple('.clase'+'.'+nombreDia,'block');
 
     } else {
 
         if(vDia != 'F'){
-            cambiarDisplayMultiple('cursoDisponible','none');
+            cambiarDisplayMultiple2('.cursoDisponible','none');
 
-            cambiarDisplayMultiple(nombreDia,'block'); 
+            cambiarDisplayMultiple2('.cursoDisponible'+'.'+nombreDia,'block'); 
         }
     
 
 
-        cambiarDisplayMultiple('clase', 'none');
+        cambiarDisplayMultiple('.clase', 'none');
 
-        cambiarDisplayMultiple(nombreDia + '.' + nombreCurso, 'block');
+        cambiarDisplayMultiple('.'+nombreDia + '.' + nombreCurso, 'block');
 
     }
 
@@ -77,12 +86,23 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
 function cambiarDisplayMultiple(selector, tipoDisplay) {
     
     if(tipoDisplay=='none'){
-        $("."+selector).fadeOut();
+        $(selector).fadeOut();
 
     }else{
-        $("."+selector).fadeIn();
+        $(selector).fadeIn();
     }
 }
+
+function cambiarDisplayMultiple2(selector, tipoDisplay) {
+    
+    if(tipoDisplay=='none'){
+        $(selector).hide();
+
+    }else{
+        $(selector).show();
+    }
+}
+
 
 function asignarClass(id,value){
 	document.getElementById(id).className = value;
