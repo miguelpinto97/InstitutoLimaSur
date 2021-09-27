@@ -44,7 +44,7 @@
 
                                 <div class="row col-md-12 col-sm-12 col-lg-12 justify-content-center" id="selector"
                                     data-bind="foreach: DiasSemana">
-                                    <div class="col-4 col-md-4 col-sm-4 col-lg-12">
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4">
                                         <p
                                             data-bind="attr:{class: $data.Valor == '0'? 'MenuLateralSeleccionado text-center' : 'MenuLateral text-center', id:$data.Valor},
                                                      text: $data.Dia, click: function(data) { filtroTotal($data.Valor , $data.Dia, 'F','F') }">
@@ -55,7 +55,7 @@
                                 <div id="ListaCursos" class="row justify-content-center"
                                     data-bind="foreach: CursosDisponibles">
 
-                                    <div class="cursoDisponible col-md-3 col-sm-9 col-3 m-1 text-center card"
+                                    <div class="cursoDisponible col-md-3 col-sm-3 col-3 m-1 text-center card"
                                         data-bind="class: $data.Dias, attr:{id:$data.CursoCorto}" style="min-width: 30%; display: block;">
 
                                         <img class="card-img-top mt-2" 
