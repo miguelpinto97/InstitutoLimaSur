@@ -9,8 +9,8 @@
     <base href=".">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link
-        href="https://firebasestorage.googleapis.com/v0/b/academia-digital-80d57.appspot.com/o/app.css?alt=media&token=c6b06f83-df70-42bf-bd11-f84902c95e5c"
+  <link
+        href="app.css"
         rel="stylesheet">
 </head>
 
@@ -31,84 +31,91 @@
                 <img style="width:100%" src="img/Wallpaper PC Blue.png">
 
                 <br>
-
-                <!--!--><label class="form-label mt-2">¡Filtra y encuentra tu clase!</label>
-
-                <select id="selector" class="form-select col-md-3 col-sm-9" onchange="filtroTotal()">
-                    <!--!-->
-                    <option value="0">
-                        <!--!-->Todos los Días
-                    </option>
-                    <!--!-->
-                    <option value="Lunes">Lunes</option>
-                    <!--!-->
-                    <option value="Martes">Martes</option>
-                    <!--!-->
-                    <option value="Miercoles">Miercoles</option>
-                    <!--!-->
-                    <option value="Jueves">Jueves</option>
-                    <!--!-->
-                    <option value="Viernes">Viernes</option>
-                    <!--!-->
-                    <option value="Sabado">Sabado</option>
-                    <!--!-->
-                    <!--!-->
-                </select>
-                <!--!-->
-
-                <select id="selectorCurso" class="form-select col-md-7 col-sm-9 mt-2 mb-4" onchange="filtroTotal()">
-                    <!--!-->
-                    <option value="0">Todos los Cursos</option>
-                    <!--!-->
-                    <option value="AntiguoTestamento2">Antiguo Testamento 2</option>
-                    <!--!-->
-                    <option value="HistoriaFamiliar">Historia Familiar</option>
-                    <!--!-->
-                    <option value="DoctrinayConvenios2">Doctrina y Convenios 2</option>
-                    <!--!-->
-                    <option value="ElEvangelioyVidaProductiva">El Evangelio y Vida Productiva</option>
-                    <!--!-->
-                    <option value="EnseñanzasyDoctrinadelLibrodeMormón">Enseñanzas y Doctrina del Libro de Mormón
-                    </option>
-                    <!--!-->
-                    <option value="EstudiodelasEscrituras">Estudio de las Escrituras</option>
-                    <!--!-->
-                    <option value="LibrodeMormón2">Libro de Mormón 2</option>
-                    <!--!-->
-                    <option value="PreparemosunMatrimonioEterno">Preparemos un Matrimonio Eterno</option>
-                    <!--!-->
-                    <option value="PresidentesdelaIglesia">Presidentes de la Iglesia</option>
-                    <!--!-->
-                    <option value="EdifiquemosMatrimonioEterno">Edifiquemos Matrimonio Eterno</option>
-                    <!--!-->
-                    <option value="JesucristoyelEvangelioSempiterno">Jesucristo y el Evangelio Sempiterno</option>
-                    <!--!-->
-                    <option value="CoroAvanzado">Coro Avanzado</option>
-                    <!--!-->
-                    <option value="LasMujeresdelasescrituras">Las Mujeres de las escrituras</option>
-                    <!--!-->
-                    <option value="LaFamiliaEterna">La Familia Eterna</option>
-                    <!--!-->
-                    <option value="FundamentosdelaRestauración">Fundamentos de la Restauración</option>
-                    <!--!-->
-                    <option value="Coro">Coro</option>
-                    <!--!-->
-                    <option value="HimnosdelosSantosdelosÚltimosDías">Himnos de los Santos de los Últimos Días</option>
-                    <!--!-->
-                    <option value="HistoriadelosSantos">Historia de los Santos</option>
-                    <!--!-->
-                    <option value="PreparaciónMisional">Preparación Misional</option>
-                    <!--!-->
-                    <option value="ElDivinoDondePerdon(hibrida)">El Divino Don de Perdon (hibrida)</option>
-                    <!--!-->
-                    <option value="AntiguoTestamento1">Antiguo Testamento 1</option>
-                    <!--!-->
-                    <!--!-->
-                </select>
-                <!--!-->
+                <br>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                ¡Filtra y encuentra el Horario Perfecto para ti!
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                
+                                <div class="row col-md-12 col-sm-12 col-lg-12 justify-content-center" id="selector" data-bind="foreach: DiasSemana">
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-12">
+                                       <p id="4" 
+                                                 class="MenuLateral text-center" 
+                                                 data-bind="text: $data.Dia, click: function(data) { filtroTotal($data.Valor , $data.Dia, 'F','F') }"
+                                                 > </p>
+                                    </div>
+                                 </div>
 
 
-                <div class="row justify-content-center" data-bind="foreach: Horarios">
+                                <!--!-->
+                
+                                <select id="selectorCurso" class="form-select col-md-7 col-sm-9 mt-2 mb-4" onchange="filtroTotal('F','F','F','F')">
+                                    <!--!-->
+                                    <option value="0">Todos los Cursos</option>
+                                    <!--!-->
+                                    <option value="AntiguoTestamento2">Antiguo Testamento 2</option>
+                                    <!--!-->
+                                    <option value="HistoriaFamiliar">Historia Familiar</option>
+                                    <!--!-->
+                                    <option value="DoctrinayConvenios2">Doctrina y Convenios 2</option>
+                                    <!--!-->
+                                    <option value="ElEvangelioyVidaProductiva">El Evangelio y Vida Productiva</option>
+                                    <!--!-->
+                                    <option value="EnseñanzasyDoctrinadelLibrodeMormón">Enseñanzas y Doctrina del Libro de Mormón
+                                    </option>
+                                    <!--!-->
+                                    <option value="EstudiodelasEscrituras">Estudio de las Escrituras</option>
+                                    <!--!-->
+                                    <option value="LibrodeMormón2">Libro de Mormón 2</option>
+                                    <!--!-->
+                                    <option value="PreparemosunMatrimonioEterno">Preparemos un Matrimonio Eterno</option>
+                                    <!--!-->
+                                    <option value="PresidentesdelaIglesia">Presidentes de la Iglesia</option>
+                                    <!--!-->
+                                    <option value="EdifiquemosMatrimonioEterno">Edifiquemos Matrimonio Eterno</option>
+                                    <!--!-->
+                                    <option value="JesucristoyelEvangelioSempiterno">Jesucristo y el Evangelio Sempiterno</option>
+                                    <!--!-->
+                                    <option value="CoroAvanzado">Coro Avanzado</option>
+                                    <!--!-->
+                                    <option value="LasMujeresdelasescrituras">Las Mujeres de las escrituras</option>
+                                    <!--!-->
+                                    <option value="LaFamiliaEterna">La Familia Eterna</option>
+                                    <!--!-->
+                                    <option value="FundamentosdelaRestauración">Fundamentos de la Restauración</option>
+                                    <!--!-->
+                                    <option value="Coro">Coro</option>
+                                    <!--!-->
+                                    <option value="HimnosdelosSantosdelosÚltimosDías">Himnos de los Santos de los Últimos Días</option>
+                                    <!--!-->
+                                    <option value="HistoriadelosSantos">Historia de los Santos</option>
+                                    <!--!-->
+                                    <option value="PreparaciónMisional">Preparación Misional</option>
+                                    <!--!-->
+                                    <option value="ElDivinoDondePerdon(hibrida)">El Divino Don de Perdon (hibrida)</option>
+                                    <!--!-->
+                                    <option value="AntiguoTestamento1">Antiguo Testamento 1</option>
+                                    <!--!-->
+                                    <!--!-->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div id="ListaHorarios" class="row justify-content-center" data-bind="foreach: Horarios">
                     <!--!-->
                     <div class="clase col-md-3 col-sm-9 m-3 text-center card"
                         data-bind="class: $data.Dia +  ' ' + $data.CursoCorto" style="min-width: 40%; display: block;">
@@ -119,9 +126,11 @@
                             <!--!-->
                             <h5 class="card-title" style="font-weight:bold" data-bind="text: $data.Curso"></h5>
                             <!--!-->
-                            <p class="card-text" style="margin-bottom: 0.2rem !important" data-bind="text: $data.Maestro"></p>
+                            <p class="card-text" style="margin-bottom: 0.2rem !important"
+                                data-bind="text: $data.Maestro"></p>
                             <!--!-->
-                            <p class="card-text" style="margin-bottom: 0.2rem !important" data-bind="text: $data.Dia + ' | ' + $data.Hora + ' ' + $data.Turno"></p>
+                            <p class="card-text" style="margin-bottom: 0.2rem !important"
+                                data-bind="text: $data.Dia + ' | ' + $data.Hora + ' ' + $data.Turno"></p>
                             <!--!-->
                             <div class="row justify-content-center">
                                 <!--!-->
@@ -129,9 +138,8 @@
                                     data-bind="attr:{href: $data.EnlaceInscripcion}">
                                     Inscribrirme en el Curso</a>
                                 <!--!-->
-                                <a class="btn btn-success btn-sm col-12"
-                                data-bind="attr:{href: $data.EnlaceWhatsapp}">
-                                Unirme al Grupo de Whatsapp</a>
+                                <a class="btn btn-success btn-sm col-12" data-bind="attr:{href: $data.EnlaceWhatsapp}">
+                                    Unirme al Grupo de Whatsapp</a>
                                 <!--!-->
                             </div>
                             <!--!-->
@@ -152,6 +160,16 @@
         </div>
         <!--!-->
     </app>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="js/Horario.js"></script>
     <script type='text/javascript' src='js/knockout-3.5.1.js'></script>
     <script src="js/app.js"></script>

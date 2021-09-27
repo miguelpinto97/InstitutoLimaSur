@@ -1,20 +1,28 @@
 
-ko.applyBindings(Horarios);
 
-var Dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
-
-
-function filtroTotal() {
-
-    var comboDia = document.getElementById("selector");
-    var valorDia = comboDia.value;
-    var nombreDia = comboDia.options[comboDia.selectedIndex].text;
-
-    var comboCurso = document.getElementById("selectorCurso");
-    var valorCurso = comboCurso.value;
-    var nombreCurso = comboCurso.value;
+ko.applyBindings(Horarios, document.getElementById('ListaHorarios'));
+ko.applyBindings(DiasSemana, document.getElementById('selector'));
 
 
+
+var valorDia = '0';
+var nombreDia = '0';
+var valorCurso = '0';
+var nombreCurso = '0';
+
+function filtroTotal(vDia, nDia, vCurso, nCurso) {
+
+    if(vDia != 'F'){
+        valorDia = vDia;
+        nombreDia=nDia;
+    }
+
+    if(vCurso != 'F'){
+        valorCurso = vCurso;
+        nombreCurso = nCurso;
+    }
+    alert(vDia);
+    alert(vCurso);
     if (valorDia == '0' & valorCurso == '0') {
 
         //Muestra Todas las Clases

@@ -1,3 +1,37 @@
+var DiasSemana= [
+   {
+      "Valor":"0",
+      "Dia":"Todos"
+   },
+   {
+      "Valor":"Lunes",
+      "Dia":"Lunes"
+   },
+   {
+      "Valor":"Martes",
+      "Dia":"Martes"
+   },
+   {
+      "Valor":"Miercoles",
+      "Dia":"Miercoles"
+   },
+   {
+      "Valor":"Jueves",
+      "Dia":"Jueves"
+   },
+   {
+      "Valor":"Viernes",
+      "Dia":"Viernes"
+   },
+   {
+      "Valor":"Sabado",
+      "Dia":"Sabado"
+   }
+];
+
+
+
+
 var Horarios = [
    {
       "Hora":"30/12/1899 16:00:00",
