@@ -15,14 +15,18 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
     if(vDia != 'F'){
         valorDia = vDia;
         nombreDia=nDia;
+
+        for(x=0; x<DiasSemana.length;x++ ){
+            asignarClass(DiasSemana[x].Valor,"MenuLateral text-center");
+        }
+        asignarClass(valorDia,"MenuLateralSeleccionado text-center");
     }
 
     if(vCurso != 'F'){
         valorCurso = vCurso;
         nombreCurso = nCurso;
     }
-    alert(vDia);
-    alert(vCurso);
+
     if (valorDia == '0' & valorCurso == '0') {
 
         //Muestra Todas las Clases
@@ -73,4 +77,8 @@ function cambiarDisplayMultiple(coleccion, tipoDisplay) {
 
         coleccion[i].style.display = tipoDisplay;
     }
+}
+function asignarClass(id,value){
+	document.getElementById(id).className = value;
+
 }

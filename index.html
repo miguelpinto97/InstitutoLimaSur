@@ -46,9 +46,8 @@
                                 
                                 <div class="row col-md-12 col-sm-12 col-lg-12 justify-content-center" id="selector" data-bind="foreach: DiasSemana">
                                     <div class="col-4 col-md-4 col-sm-4 col-lg-12">
-                                       <p id="4" 
-                                                 class="MenuLateral text-center" 
-                                                 data-bind="text: $data.Dia, click: function(data) { filtroTotal($data.Valor , $data.Dia, 'F','F') }"
+                                       <p data-bind="attr:{class: $data.Valor == '0'? 'MenuLateralSeleccionado text-center' : 'MenuLateral text-center', id:$data.Valor},
+                                                     text: $data.Dia, click: function(data) { filtroTotal($data.Valor , $data.Dia, 'F','F') }"
                                                  > </p>
                                     </div>
                                  </div>
@@ -120,7 +119,7 @@
                     <div class="clase col-md-3 col-sm-9 m-3 text-center card"
                         data-bind="class: $data.Dia +  ' ' + $data.CursoCorto" style="min-width: 40%; display: block;">
                         <!--!-->
-                        <img class="card-img-top mt-2" data-bind="attr:{src: $data.EnlaceFoto}" alt="Card image cap">
+                        <img class="card-img-top mt-2" data-bind="attr:{src: 'Imagenes Reducidas/'+$data.NombreImagen + '.jpeg'}" alt="Card image cap">
                         <!--!-->
                         <div class="card-body">
                             <!--!-->
@@ -130,15 +129,15 @@
                                 data-bind="text: $data.Maestro"></p>
                             <!--!-->
                             <p class="card-text" style="margin-bottom: 0.2rem !important"
-                                data-bind="text: $data.Dia + ' | ' + $data.Hora + ' ' + $data.Turno"></p>
+                                data-bind="text: $data.Dia + ' | ' + $data.Hora"></p>
                             <!--!-->
                             <div class="row justify-content-center">
                                 <!--!-->
                                 <a class="btn btn-primary btn-sm col-12 m-2"
-                                    data-bind="attr:{href: $data.EnlaceInscripcion}">
+                                    data-bind="attr:{href: $data.LinkInscripcion}">
                                     Inscribrirme en el Curso</a>
                                 <!--!-->
-                                <a class="btn btn-success btn-sm col-12" data-bind="attr:{href: $data.EnlaceWhatsapp}">
+                                <a class="btn btn-success btn-sm col-12" data-bind="attr:{href: $data.LinkWhatsapp}">
                                     Unirme al Grupo de Whatsapp</a>
                                 <!--!-->
                             </div>
