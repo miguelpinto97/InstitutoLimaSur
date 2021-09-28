@@ -7,75 +7,84 @@ ko.applyBindings(DiasSemana, document.getElementById('selector'));
 
 
 var valorDia = '0';
-var nombreDia = '0';
 var valorCurso = '0';
-var nombreCurso = '0';
 
-function filtroTotal(vDia, nDia, vCurso, nCurso) {
 
-    if(vDia != 'F'){
-        valorDia = vDia;
-        nombreDia=nDia;
+function filtrarDias(vDia){
+    valorDia = vDia;
+    actualizarSeleccionMenuDias();
 
-        for(x=0; x<DiasSemana.length;x++ ){
-            asignarClass(DiasSemana[x].Valor,"MenuLateral text-center");
-        }
-        asignarClass(valorDia,"MenuLateralSeleccionado text-center");
+    if(valorDia != '0'){
+        valorCurso ='0';
     }
 
-    if(vCurso != 'F'){
-        valorCurso = vCurso;
-        nombreCurso = nCurso;
 
-        cambiarBordesMultiple();
-        cambiarBordeUnico(valorCurso);
+
+}
+
+function filtroTotal(vDia, vCurso) {
+
+    if (vDia != '-1') {
+        valorDia = vDia;
+        valorCurso ='0';
+        limpiarSeleccionCurso();
+        actualizarSeleccionMenuDias();
+    }
+
+    if (vCurso != '-1') {
+        valorCurso = vCurso;
+        actualizarSeleccionCurso();
         window.location.href = "index.html#ListaHorarios";
     }
 
     if (valorDia == '0' & valorCurso == '0') {
-        cambiarDisplayMultiple('#ListaCursos','none');
- 
-        cambiarDisplayMultiple('#ListaCursos','block'); 
-        
-        cambiarDisplayMultiple('.clase', 'block');
+        OcultarMostrarTransicion('#ListaCursos', '0');
 
-        cambiarDisplayMultiple2('.cursoDisponible','block');
+        OcultarMostrarTransicion('#ListaCursos', '1');
+
+        OcultarMostrarTransicion('.clase', '1');
+
+        OcultarMostrar('.cursoDisponible', 'block');
     }
     else if (valorDia == '0' & valorCurso != '0') {
 
-        cambiarDisplayMultiple('.clase', 'none');
+        OcultarMostrarTransicion('.clase', '0');
 
-        cambiarDisplayMultiple('.'+nombreCurso, 'block');
+        OcultarMostrarTransicion('.' + valorCurso, '1');
 
-        cambiarDisplayMultiple2('.cursoDisponible','block');
+        OcultarMostrar('.cursoDisponible', 'block');
 
     } else if (valorDia != '0' & valorCurso == '0') {
 
-        cambiarDisplayMultiple('#ListaCursos','none');
- 
-        cambiarDisplayMultiple('#ListaCursos','block'); 
-    
-        cambiarDisplayMultiple2('.cursoDisponible','none');
+        OcultarMostrarTransicion('#ListaCursos', '0');
 
-        cambiarDisplayMultiple2('.cursoDisponible'+'.'+nombreDia,'block');
+        OcultarMostrarTransicion('#ListaCursos', '1');
 
-        cambiarDisplayMultiple('.clase', 'none');
+        OcultarMostrar('.cursoDisponible', 'none');
 
-        cambiarDisplayMultiple('.clase'+'.'+nombreDia,'block');
+        OcultarMostrar('.cursoDisponible' + '.' + valorDia, 'block');
+
+        OcultarMostrarTransicion('.clase', '0');
+
+        OcultarMostrarTransicion('.clase' + '.' + valorDia, '1');
 
     } else {
 
-        if(vDia != 'F'){
-            cambiarDisplayMultiple2('.cursoDisponible','none');
+        if (valorDia != '-1') {
 
-            cambiarDisplayMultiple2('.cursoDisponible'+'.'+nombreDia,'block'); 
+            OcultarMostrarTransicion('#ListaCursos', '0');
+
+            OcultarMostrarTransicion('#ListaCursos', '1');
+
+            OcultarMostrar('.cursoDisponible', 'none');
+
+            OcultarMostrar('.cursoDisponible' + '.' + valorDia, 'block');
         }
-    
 
 
-        cambiarDisplayMultiple('.clase', 'none');
+        OcultarMostrarTransicion('.clase', '0');
 
-        cambiarDisplayMultiple('.'+nombreDia + '.' + nombreCurso, 'block');
+        OcultarMostrarTransicion('.' + valorDia + '.' + valorCurso, '1');
 
     }
 
@@ -83,53 +92,66 @@ function filtroTotal(vDia, nDia, vCurso, nCurso) {
 
 
 
-function cambiarDisplayMultiple(selector, tipoDisplay) {
-    
-    if(tipoDisplay=='none'){
+function OcultarMostrarTransicion(selector, tipoDisplay) {
+
+    if (tipoDisplay == '0') {
         $(selector).fadeOut();
 
-    }else{
+    } else {
         $(selector).fadeIn();
     }
 }
 
-function cambiarDisplayMultiple2(selector, tipoDisplay) {
-    
-    if(tipoDisplay=='none'){
+function OcultarMostrar(selector, tipoDisplay) {
+
+    if (tipoDisplay == 'none') {
         $(selector).hide();
 
-    }else{
+    } else {
         $(selector).show();
     }
 }
 
 
-function asignarClass(id,value){
-	document.getElementById(id).className = value;
+function asignarClass(id, value) {
+    document.getElementById(id).className = value;
 
 }
 
-function cambiarBordeUnico(id){
 
-	document.getElementById(id).style.borderColor = '#0366d6';
-
-}
-function cambiarBordesMultiple() {
-
-    var coleccion = document.getElementsByClassName('cursoDisponible');
-
-    for (var i = 0; i < coleccion.length; i++) {
-
-        coleccion[i].style.borderColor= 'rgba(0,0,0,.125)';
-    }
-}
 
 function cambiarGrisesMultiple(coleccion, value) {
 
 
     for (var i = 0; i < coleccion.length; i++) {
 
-        coleccion[i].style.filter= 'grayscale('+value+')';
+        coleccion[i].style.filter = 'grayscale(' + value + ')';
     }
 }
 
+function actualizarSeleccionMenuDias() {
+    for (x = 0; x < DiasSemana.length; x++) {
+        asignarClass(DiasSemana[x].Valor, "MenuLateral text-center");
+    }
+    asignarClass(valorDia, "MenuLateralSeleccionado text-center");
+}
+
+
+function actualizarSeleccionCurso() {
+    var coleccion = document.getElementsByClassName('cursoDisponible');
+
+    for (var i = 0; i < coleccion.length; i++) {
+
+        coleccion[i].style.borderColor = 'rgba(0,0,0,.125)';
+    }
+    document.getElementById(valorCurso).style.borderColor = '#0366d6';
+}
+
+function limpiarSeleccionCurso(){
+    var coleccion = document.getElementsByClassName('cursoDisponible');
+
+    for (var i = 0; i < coleccion.length; i++) {
+
+        coleccion[i].style.borderColor = 'rgba(0,0,0,.125)';
+    }
+}

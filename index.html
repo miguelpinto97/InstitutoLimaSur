@@ -7,29 +7,20 @@
     <title>Horario ILS</title>
     <!--<base href="/">-->
     <base href=".">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="app.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 </head>
 
 <body>
     <app>
 
 
-
-
-
-
         <div class="main">
-
             <div class="content" style=" padding-right: 12px !important;   padding-left: 12px!important;">
 
+                <img  style="width:100%; " src="img/Wallpaper PC Red.png">
 
-
-                <img style="width:100%" src="img/Wallpaper PC Blue.png">
-
-                <br>
-                <br>
+                <br> <br>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -47,7 +38,7 @@
                                     <div class="col-4 col-md-4 col-sm-4 col-lg-4">
                                         <p
                                             data-bind="attr:{class: $data.Valor == '0'? 'MenuLateralSeleccionado text-center' : 'MenuLateral text-center', id:$data.Valor},
-                                                     text: $data.Dia, click: function(data) { filtroTotal($data.Valor , $data.Dia, 'F','F') }">
+                                                     text: $data.Dia, click: function(data) { filtroTotal($data.Valor , '-1') }">
                                         </p>
                                     </div>
                                 </div>
@@ -60,9 +51,8 @@
                                         data-bind="class: $data.Dias, attr:{id:$data.CursoCorto}"
                                         style="min-width: 20%; display: block;">
 
-                                        <img class="card-img-top mt-2"
-                                            data-bind="attr:{src: 'imagen.png'},
-                                                      click: function(data) { filtroTotal('F','F', $data.CursoCorto , $data.CursoCorto) }"
+                                        <img class="card-img-top mt-2" data-bind="attr:{src: 'img/imagen.png'},
+                                                      click: function(data) { filtroTotal('-1', $data.CursoCorto) }"
                                             alt="Card image cap">
 
                                         <div style="flex: 1 1 auto; margin-top: 8px;">
@@ -94,7 +84,8 @@
                     style="margin-left: 1.5px; margin-right: 1.5px;">
 
                     <div class="clase col-md-3 col-sm-9 m-3 text-center card"
-                        data-bind="class: $data.Dia +  ' ' + $data.CursoCorto" style="min-width: 40%; display: block;">
+                        data-bind="class: $data.Dia +  ' ' + $data.CursoCorto +' ' +$data.Tipo +'x'"
+                        style="min-width: 40%; display: block;">
 
                         <img class="card-img-top mt-2"
                             data-bind="attr:{src: 'Imagenes Reducidas/'+$data.NombreImagen + '.jpeg'}"
@@ -109,6 +100,9 @@
 
                             <p class="card-text" style="margin-bottom: 0.2rem !important"
                                 data-bind="text: $data.Dia + ' | ' + $data.Hora"></p>
+
+                            <p class="card-text TipoCurso" style="margin-bottom: 0.2rem !important"
+                                data-bind="text: 'Curso '+ $data.Tipo"></p>
 
                             <div class="row justify-content-center">
 
@@ -139,14 +133,14 @@
 
         <div class="BotonesFlotantes">
             <a class="nav-link PunteroMouse" onclick="window.open('https://wa.me/51923431149')">
-                <img src="whatsapp (1).svg" />
+                <img src="img/whatsapp (1).svg" />
             </a>
         </div>
     </app>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
-        <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/jquery-3.6.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
