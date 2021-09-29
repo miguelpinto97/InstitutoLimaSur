@@ -51,8 +51,9 @@
 }
 
 .MenuLateralSeleccionado {
-    background-color: #Ef5350;
-    color: white;
+    background-color: #D0c5e7;
+    color: #1a237e;
+    font-weight: bold;
     font-size: 17px;
 }
     .MenuLateralSeleccionado:hover {
@@ -64,8 +65,9 @@
     font-size: 17px;
 }
 .MenuLateral:hover{
-    background-color:#Ef5350;
-    color:white;
+    background-color: #D0c5e7;
+    color: #1a237e;
+    font-weight: bold;
     cursor:pointer;
 }
 
