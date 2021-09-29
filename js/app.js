@@ -12,51 +12,52 @@ var valorSwitch = false;
 
 function filtroTotal(vDia, vCurso, vSwitch) {
 
-    var claseDia='';
-    var claseTipo='';
-    var claseDiaTipo='';
-    var claseCurso='';
+    var claseDia = '';
+    var claseTipo = '';
+    var claseDiaTipo = '';
+    var claseCurso = '';
 
     if (vDia != '-1') {
         valorDia = vDia;
         valorCurso = '0';
         limpiarSeleccionCurso();
         actualizarSeleccionMenuDias();
-    }else if (vCurso != '-1') {
+    } else if (vCurso != '-1') {
         valorCurso = vCurso;
         actualizarSeleccionCurso();
-    }else if(vSwitch != '-1'){
+    } else if (vSwitch != '-1') {
         valorSwitch = !valorSwitch;
+
+        document.getElementById('textoFiltro').innerHTML = valorSwitch == true ? 'Filtro Activado':'Filtro Desactivado';
+
     }
 
-    claseDia =  valorDia=='0'? '' : '.'+valorDia;
-    claseTipo = valorSwitch==false?'':'.Presencial';
+    claseDia = valorDia == '0' ? '' : '.' + valorDia;
+    claseTipo = valorSwitch == false ? '' : '.Presencial';
 
-    if(valorDia!=0 && valorSwitch == true){
-        claseDiaTipo = '.' + valorDia+'Presencial';
+    if (valorDia != 0 && valorSwitch == true) {
+        claseDiaTipo = '.' + valorDia + 'Presencial';
     }
 
-    if(vCurso=='-1'){
+    if (vCurso == '-1') {
         OcultarMostrarTransicion('#ListaCursos', '0');
 
         OcultarMostrarTransicion('#ListaCursos', '1');
-    
+
         OcultarMostrar('.cursoDisponible', 'none');
-    
-        OcultarMostrar('.cursoDisponible' +  claseDia + claseTipo + claseDiaTipo, 'block');
+
+        OcultarMostrar('.cursoDisponible' + claseDia + claseTipo + claseDiaTipo, 'block');
     }
 
-    console.log(claseDia + claseTipo + claseDiaTipo);
-    claseCurso = valorCurso=='0'? '' : '.'+valorCurso;
-    claseTipo = valorSwitch==false?'':'.Presencialx';
+    claseCurso = valorCurso == '0' ? '' : '.' + valorCurso;
+    claseTipo = valorSwitch == false ? '' : '.Presencialx';
 
 
     OcultarMostrarTransicion('.clase', '0');
-    OcultarMostrarTransicion('.clase' +claseDia + claseCurso + claseTipo, '1');
-    console.log(claseDia + claseCurso + claseTipo);
+    OcultarMostrarTransicion('.clase' + claseDia + claseCurso + claseTipo, '1');
 
-    if(vCurso!='-1'){
-        window.location.href = "index.html#ListaHorarios"; 
+    if (vCurso != '-1') {
+        window.location.href = "index.html#ListaHorarios";
     }
 }
 
