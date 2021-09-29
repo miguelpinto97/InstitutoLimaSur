@@ -31,139 +31,193 @@ var DiasSemana = [
 
 var CursosDisponibles = [
    {
-      "Curso":"Todos los cursos",
+      "Curso":"Todos los Cursos",
       "CursoCorto":"0",
-      "Dias":"Lunes Martes Miercoles Jueves Viernes Sabado"
+      "DiasTipos":"LunesPresencial MartesPresencial MiercolesPresencial JuevesPresencial ViernesPresencial SabadoPresencial",
+      "Dias":"Lunes Martes Miercoles Jueves Viernes Sabado",
+      "Tipos":"Presencial"
    },
    {
       "Curso":"Antiguo Testamento 1A",
       "CursoCorto":"AntiguoTestamento1A",
-      "Dias":"Martes"
+      "DiasTipos":"MartesVirtual",
+      "Dias":"Martes",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Coro Avanzado A",
       "CursoCorto":"CoroAvanzadoA",
-      "Dias":"Miercoles Jueves"
+      "DiasTipos":"JuevesVirtual MiercolesVirtual",
+      "Dias":"Jueves Miercoles",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Doctrina y Convenios 2 B",
       "CursoCorto":"DoctrinayConvenios2B",
-      "Dias":"Martes"
+      "DiasTipos":"MartesVirtual",
+      "Dias":"Martes",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Edifiquemos un Matrimonio Eterno A",
       "CursoCorto":"EdifiquemosunMatrimonioEternoA",
-      "Dias":"Martes Miercoles"
+      "DiasTipos":"MartesVirtual MiercolesVirtual",
+      "Dias":"Martes Miercoles",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"El Divino Don de Perdon Parte A",
       "CursoCorto":"ElDivinoDondePerdonParteA",
-      "Dias":"Lunes Miercoles"
+      "DiasTipos":"LunesVirtual MiercolesVirtual",
+      "Dias":"Lunes Miercoles",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"El Divino Don del Perdon parte B",
       "CursoCorto":"ElDivinoDondelPerdonparteB",
-      "Dias":"Sabado"
+      "DiasTipos":"SabadoPresencial",
+      "Dias":"Sabado",
+      "Tipos":"Presencial"
    },
    {
       "Curso":"El Evangelio y la Vida Productiva A",
       "CursoCorto":"ElEvangelioylaVidaProductivaA",
-      "Dias":"Miercoles"
+      "DiasTipos":"MiercolesPresencial",
+      "Dias":"Miercoles",
+      "Tipos":"Presencial"
    },
    {
       "Curso":"Enseñanza y Doctrina del Libro de Mormon A",
       "CursoCorto":"EnseñanzayDoctrinadelLibrodeMormonA",
-      "Dias":"Viernes Sabado"
+      "DiasTipos":"ViernesVirtual ViernesPresencial SabadoPresencial SabadoVirtual",
+      "Dias":"Viernes Sabado",
+      "Tipos":"Virtual Presencial"
    },
    {
       "Curso":"Enseñanzas de los profetas vivientes A",
       "CursoCorto":"EnseñanzasdelosprofetasvivientesA",
-      "Dias":"Martes"
+      "DiasTipos":"MartesVirtual",
+      "Dias":"Martes",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Enseñanzas del presidente Nelson",
       "CursoCorto":"EnseñanzasdelpresidenteNelson",
-      "Dias":"Sabado"
+      "DiasTipos":"SabadoVirtual",
+      "Dias":"Sabado",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Enseñanzas del presidente Nelson A",
       "CursoCorto":"EnseñanzasdelpresidenteNelsonA",
-      "Dias":"Jueves"
+      "DiasTipos":"JuevesVirtual",
+      "Dias":"Jueves",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Familia Eterna A",
       "CursoCorto":"FamiliaEternaA",
-      "Dias":"Jueves"
+      "DiasTipos":"JuevesVirtual",
+      "Dias":"Jueves",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Fundamentos de la Restauracion A",
       "CursoCorto":"FundamentosdelaRestauracionA",
-      "Dias":"Martes Miercoles"
+      "DiasTipos":"MartesVirtual MiercolesVirtual",
+      "Dias":"Martes Miercoles",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Introduccion a la Historia Familiar A",
       "CursoCorto":"IntroduccionalaHistoriaFamiliarA",
-      "Dias":"Martes"
+      "DiasTipos":"MartesVirtual",
+      "Dias":"Martes",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Jesucristo y el Evangelio Sempiterno",
       "CursoCorto":"JesucristoyelEvangelioSempiterno",
-      "Dias":"Sabado"
+      "DiasTipos":"SabadoVirtual",
+      "Dias":"Sabado",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Jesucristo y el Evangelio Sempiterno A",
       "CursoCorto":"JesucristoyelEvangelioSempiternoA",
-      "Dias":"Viernes Sabado"
+      "DiasTipos":"MartesVirtual JuevesVirtual JuevesPresencial ViernesVirtual SabadoVirtual",
+      "Dias":"Martes Jueves Viernes Sabado",
+      "Tipos":"Virtual Presencial"
    },
    {
       "Curso":"La Familia Eterna A",
       "CursoCorto":"LaFamiliaEternaA",
-      "Dias":"Viernes Sabado"
+      "DiasTipos":"JuevesVirtual ViernesPresencial SabadoVirtual",
+      "Dias":"Jueves Viernes Sabado",
+      "Tipos":"Virtual Presencial"
    },
    {
       "Curso":"Las Mujeres de las escrituras A",
       "CursoCorto":"LasMujeresdelasescriturasA",
-      "Dias":"Martes"
+      "DiasTipos":"MartesVirtual",
+      "Dias":"Martes",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Las Parabolas de Jesus A",
       "CursoCorto":"LasParabolasdeJesusA",
-      "Dias":"Viernes"
+      "DiasTipos":"ViernesVirtual",
+      "Dias":"Viernes",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Libro de Mormon 1A",
       "CursoCorto":"LibrodeMormon1A",
-      "Dias":"Miercoles Sabado"
+      "DiasTipos":"MartesVirtual MiercolesVirtual SabadoPresencial",
+      "Dias":"Martes Miercoles Sabado",
+      "Tipos":"Virtual Presencial"
    },
    {
       "Curso":"Mujeres de las escrituras A",
       "CursoCorto":"MujeresdelasescriturasA",
-      "Dias":"Martes Miercoles"
+      "DiasTipos":"MartesPresencial MiercolesPresencial",
+      "Dias":"Martes Miercoles",
+      "Tipos":"Presencial"
    },
    {
       "Curso":"Nuevo Testamento 1A",
       "CursoCorto":"NuevoTestamento1A",
-      "Dias":"Jueves Sabado"
+      "DiasTipos":"MartesVirtual JuevesVirtual SabadoVirtual",
+      "Dias":"Martes Jueves Sabado",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Parabolas de Jesus A",
       "CursoCorto":"ParabolasdeJesusA",
-      "Dias":"Sabado"
+      "DiasTipos":"SabadoVirtual",
+      "Dias":"Sabado",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Parabolas de Jesus B",
       "CursoCorto":"ParabolasdeJesusB",
-      "Dias":"Martes"
+      "DiasTipos":"MartesPresencial",
+      "Dias":"Martes",
+      "Tipos":"Presencial"
    },
    {
       "Curso":"Preparacion Misional (por temas)",
       "CursoCorto":"PreparacionMisional(portemas)",
-      "Dias":"Sabado"
+      "DiasTipos":"SabadoVirtual",
+      "Dias":"Sabado",
+      "Tipos":"Virtual"
    },
    {
       "Curso":"Preparemonos para un matrimonio Eterno A",
       "CursoCorto":"PreparemonosparaunmatrimonioEternoA",
-      "Dias":"Martes Sabado"
+      "DiasTipos":"MartesVirtual SabadoPresencial SabadoVirtual",
+      "Dias":"Martes Sabado",
+      "Tipos":"Virtual Presencial"
    }
 ];
 
@@ -283,11 +337,11 @@ var Horarios = [
       "Dia":"Martes",
       "Hora":"08:00 PM",
       "Maestro":"Ivan Briceño Castro",
-      "Curso":"Edifiquemos Matrimonio Eterno A",
+      "Curso":"Edifiquemos un Matrimonio Eterno A",
       "Tipo":"Virtual",
       "LinkWhatsapp":"",
       "LinkInscripcion":"",
-      "CursoCorto":"EdifiquemosMatrimonioEternoA",
+      "CursoCorto":"EdifiquemosunMatrimonioEternoA",
       "NombreImagen":"ivan"
    },
    {

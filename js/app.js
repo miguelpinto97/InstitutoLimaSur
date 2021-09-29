@@ -8,86 +8,56 @@ ko.applyBindings(DiasSemana, document.getElementById('selector'));
 
 var valorDia = '0';
 var valorCurso = '0';
+var valorSwitch = false;
 
+function filtroTotal(vDia, vCurso, vSwitch) {
 
-function filtrarDias(vDia){
-    valorDia = vDia;
-    actualizarSeleccionMenuDias();
-
-    if(valorDia != '0'){
-        valorCurso ='0';
-    }
-
-
-
-}
-
-function filtroTotal(vDia, vCurso) {
+    var claseDia='';
+    var claseTipo='';
+    var claseDiaTipo='';
+    var claseCurso='';
 
     if (vDia != '-1') {
         valorDia = vDia;
-        valorCurso ='0';
+        valorCurso = '0';
         limpiarSeleccionCurso();
         actualizarSeleccionMenuDias();
-    }
-
-    if (vCurso != '-1') {
+    }else if (vCurso != '-1') {
         valorCurso = vCurso;
         actualizarSeleccionCurso();
-        window.location.href = "index.html#ListaHorarios";
+    }else if(vSwitch != '-1'){
+        valorSwitch = !valorSwitch;
     }
 
-    if (valorDia == '0' & valorCurso == '0') {
+    claseDia =  valorDia=='0'? '' : '.'+valorDia;
+    claseTipo = valorSwitch==false?'':'.Presencial';
+
+    if(valorDia!=0 && valorSwitch == true){
+        claseDiaTipo = '.' + valorDia+'Presencial';
+    }
+
+    if(vCurso=='-1'){
         OcultarMostrarTransicion('#ListaCursos', '0');
 
         OcultarMostrarTransicion('#ListaCursos', '1');
-
-        OcultarMostrarTransicion('.clase', '1');
-
-        OcultarMostrar('.cursoDisponible', 'block');
-    }
-    else if (valorDia == '0' & valorCurso != '0') {
-
-        OcultarMostrarTransicion('.clase', '0');
-
-        OcultarMostrarTransicion('.' + valorCurso, '1');
-
-        OcultarMostrar('.cursoDisponible', 'block');
-
-    } else if (valorDia != '0' & valorCurso == '0') {
-
-        OcultarMostrarTransicion('#ListaCursos', '0');
-
-        OcultarMostrarTransicion('#ListaCursos', '1');
-
+    
         OcultarMostrar('.cursoDisponible', 'none');
-
-        OcultarMostrar('.cursoDisponible' + '.' + valorDia, 'block');
-
-        OcultarMostrarTransicion('.clase', '0');
-
-        OcultarMostrarTransicion('.clase' + '.' + valorDia, '1');
-
-    } else {
-
-        if (valorDia != '-1') {
-
-            OcultarMostrarTransicion('#ListaCursos', '0');
-
-            OcultarMostrarTransicion('#ListaCursos', '1');
-
-            OcultarMostrar('.cursoDisponible', 'none');
-
-            OcultarMostrar('.cursoDisponible' + '.' + valorDia, 'block');
-        }
-
-
-        OcultarMostrarTransicion('.clase', '0');
-
-        OcultarMostrarTransicion('.' + valorDia + '.' + valorCurso, '1');
-
+    
+        OcultarMostrar('.cursoDisponible' +  claseDia + claseTipo + claseDiaTipo, 'block');
     }
 
+    console.log(claseDia + claseTipo + claseDiaTipo);
+    claseCurso = valorCurso=='0'? '' : '.'+valorCurso;
+    claseTipo = valorSwitch==false?'':'.Presencialx';
+
+
+    OcultarMostrarTransicion('.clase', '0');
+    OcultarMostrarTransicion('.clase' +claseDia + claseCurso + claseTipo, '1');
+    console.log(claseDia + claseCurso + claseTipo);
+
+    if(vCurso!='-1'){
+        window.location.href = "index.html#ListaHorarios"; 
+    }
 }
 
 
@@ -147,7 +117,7 @@ function actualizarSeleccionCurso() {
     document.getElementById(valorCurso).style.borderColor = '#0366d6';
 }
 
-function limpiarSeleccionCurso(){
+function limpiarSeleccionCurso() {
     var coleccion = document.getElementsByClassName('cursoDisponible');
 
     for (var i = 0; i < coleccion.length; i++) {

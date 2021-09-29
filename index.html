@@ -38,17 +38,18 @@
                                     <div class="col-4 col-md-4 col-sm-4 col-lg-4">
                                         <p
                                             data-bind="attr:{class: $data.Valor == '0'? 'MenuLateralSeleccionado text-center' : 'MenuLateral text-center', id:$data.Valor},
-                                                     text: $data.Dia, click: function(data) { filtroTotal($data.Valor , '-1') }">
+                                                     text: $data.Dia, click: function(data) { filtroTotal($data.Valor , '-1','-1') }">
                                         </p>
                                     </div>
                                 </div>
 
                                 <div id="FiltroPresencial">
-                                    <label class="form-check-label w-100 text-center">
+                                    <label class="form-check-label w-100 text-center" style="border: 1px solid #D0c5e7;">
                                         ¡Activa el Filtro de Clases Presenciales!
                                     </label>               
                                     <div class="form-check form-switch" style="display: flex; justify-content: center; margin: 6px;">
                                         <input style="margin-right: 6px;" 
+                                            onchange="filtroTotal('-1','-1','0');"
                                             class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
                                         <label class="form-check-label" for="flexSwitchCheckChecked">
                                             Filtro Desactivado
@@ -61,11 +62,11 @@
                                     style="justify-content: space-evenly!important;">
 
                                     <div class="cursoDisponible col-md-2 col-sm-2 col-3 m-1 text-center card"
-                                        data-bind="class: $data.Dias, attr:{id:$data.CursoCorto}"
+                                        data-bind="class: $data.Dias + ' ' + $data.Tipos + ' ' + $data.DiasTipos , attr:{id:$data.CursoCorto}"
                                         style="min-width: 20%; display: block;">
 
                                         <img class="card-img-top mt-2" data-bind="attr:{src: 'img/imagen.png'},
-                                                      click: function(data) { filtroTotal('-1', $data.CursoCorto) }"
+                                                      click: function(data) { filtroTotal('-1', $data.CursoCorto,'-1') }"
                                             alt="Card image cap">
 
                                         <div style="flex: 1 1 auto; margin-top: 8px;">
